@@ -13,14 +13,109 @@
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
         }
+        .share-button {
+            transition: transform 0.2s;
+        }
+        .share-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* カスタムカラーの追加 */
+        :root {
+            --misskey-color: #86b300;
+            --mixi2-color: #FF8328;
+        }
+
+        .bg-misskey {
+            background-color: var(--misskey-color);
+        }
+        .hover\:bg-misskey:hover {
+            background-color: var(--misskey-color);
+            opacity: 0.9;
+        }
+        .bg-mixi2 {
+            background-color: var(--mixi2-color);
+        }
+        .hover\:bg-mixi2:hover {
+            background-color: var(--mixi2-color);
+            opacity: 0.9;
+        }
+    </style>
     </style>
 </head>
 <body class="gradient-bg min-h-screen font-sans text-gray-800">
     <header class="py-8 px-4 text-center">
         <div class="max-w-4xl mx-auto">
-            <img src="/api/placeholder/200/200" alt="ファジーちゃん" class="mx-auto rounded-full shadow-lg mb-6">
+            <img src="assets/images/icon.png" alt="ファジーちゃん" class="mx-auto rounded-full shadow-lg mb-6">
             <h1 class="text-4xl font-bold mb-4 text-purple-800">ファジーちゃんプチフォトコンテスト</h1>
-            <p class="text-xl text-purple-600">6周年記念特別企画</p>
+            <p class="text-xl text-purple-600 mb-6">6周年記念特別企画</p>
+            
+            <!-- SNSシェアボタン -->
+            <div class="flex justify-center space-x-4">
+                <!-- Xでシェア -->
+                <a href="https://twitter.com/intent/tweet?text=ファジーちゃんプチフォトコンテスト%0a6周年記念特別企画%0a&url=https://fuzzy-photo-contest.pages.dev" 
+                   target="_blank" 
+                   class="share-button bg-gray-800 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-gray-700">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <span>シェア</span>
+                </a>
+                
+                <!-- LINEでシェア -->
+                <a href="https://social-plugins.line.me/lineit/share?url=https://fuzzy-photo-contest.pages.dev" 
+                   target="_blank" 
+                   class="share-button bg-green-500 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-green-400">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.346 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                    </svg>
+                    <span>送る</span>
+                </a>
+                
+                <!-- Facebookでシェア -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://fuzzy-photo-contest.pages.dev" 
+                   target="_blank" 
+                   class="share-button bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-blue-500">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                    <span>シェア</span>
+                </a>
+
+                <!-- Misskeyでシェア -->
+                <a href="https://example.com" 
+                   target="_blank" 
+                   class="share-button bg-misskey text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-misskey">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3.75 2.25h16.5c.828 0 1.5.672 1.5 1.5v16.5c0 .828-.672 1.5-1.5 1.5H3.75c-.828 0-1.5-.672-1.5-1.5V3.75c0-.828.672-1.5 1.5-1.5zm14.334 5.223c.225.358.195.833-.09 1.16l-5.315 6.041c-.121.139-.285.139-.404 0l-5.316-6.041c-.283-.327-.314-.802-.09-1.16.225-.357.674-.506 1.059-.354l4.747 2.477 4.746-2.477c.387-.152.836-.003 1.061.354z"/>
+                    </svg>
+                    <span>シェア</span>
+                </a>
+
+                <!-- Mixi2でシェア -->
+                <a href="https://example.com" 
+                   target="_blank" 
+                   class="share-button bg-mixi2 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-mixi2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 5.524 4.477 10 10 10s10-4.476 10-10c0-5.523-4.477-10-10-10zm0 18.75c-4.832 0-8.75-3.918-8.75-8.75S7.168 3.25 12 3.25s8.75 3.918 8.75 8.75-3.918 8.75-8.75 8.75zm0-13.75c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5z"/>
+                    </svg>
+                    <span>シェア</span>
+                </a>
+            </div>-.152.836-.003 1.061.354z"/>
+                    </svg>
+                    <span>シェア</span>
+                </a>
+
+                <!-- Mixi2でシェア -->
+                <a href="https://example.com" 
+                   target="_blank" 
+                   class="share-button bg-orange-500 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-orange-600">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 5.524 4.477 10 10 10s10-4.476 10-10c0-5.523-4.477-10-10-10zm0 18.75c-4.832 0-8.75-3.918-8.75-8.75S7.168 3.25 12 3.25s8.75 3.918 8.75 8.75-3.918 8.75-8.75 8.75zm0-13.75c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5z"/>
+                    </svg>
+                    <span>シェア</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -37,6 +132,13 @@
                 <p class="text-lg">2024年2月15日 12:15 ～ 2月23日 23:59</p>
             </div>
 
+            <!-- ポスター画像 -->
+            <div class="my-12 flex justify-center">
+                <div class="w-full max-w-2xl aspect-[1/1.4142] bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets/images/poster.png" alt="コンテストポスター" class="w-full h-full object-cover">
+                </div>
+            </div>
+
             <div class="bg-pink-50 rounded-lg p-6 mb-8">
                 <h3 class="text-xl font-bold mb-3 text-purple-700">📝 応募方法</h3>
                 <div class="space-y-4">
@@ -50,7 +152,7 @@
                     </div>
                     <div class="ml-4">
                         <h4 class="font-bold mb-2">2. Googleフォーム</h4>
-                        <p>フォーム上で写真を直接送信可能</p>
+                        <p>フォーム上で写真を直接送信</p>
                     </div>
                 </div>
             </div>
@@ -68,8 +170,8 @@
             <div class="bg-pink-100 rounded-lg p-6 mb-8">
                 <h3 class="text-xl font-bold mb-3 text-purple-700">🎁 賞品</h3>
                 <ul class="list-disc ml-6 space-y-2">
-                    <li>ファジーちゃんの対応衣装ギフトURL: <span class="font-bold">5名様</span></li>
-                    <li>ファジーちゃんのギフトURL: <span class="font-bold">10名様</span></li>
+                    <li>ファジーちゃんの対応衣装ギフトURL: <span class="font-bold">5名様程度</span></li>
+                    <li>ファジーちゃんのギフトURL: <span class="font-bold">10名様程度</span></li>
                 </ul>
             </div>
 
@@ -79,17 +181,17 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <a href="#" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
                             <span class="font-bold">X:</span>
-                            <span class="text-blue-600">投稿を引用</span>
+                            <span class="text-blue-600">ポストを表示（投稿次第記載します）</span>
                         </a>
                         <a href="#" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
                             <span class="font-bold">Bluesky:</span>
-                            <span class="text-blue-600">投稿を引用</span>
+                            <span class="text-blue-600">投稿を表示（投稿次第記載します）</span>
                         </a>
                         <a href="#" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
                             <span class="font-bold">Mixi2:</span>
-                            <span class="text-blue-600">投稿を引用</span>
+                            <span class="text-blue-600">投稿を表示（投稿次第記載します）</span>
                         </a>
-                        <a href="#" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKB_toLsXOFXH5e0B4rVyirCDXBjjYhbEq-cbQdASjq1QL8A/viewform?usp=dialog" class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
                             <span class="font-bold">Googleフォーム:</span>
                             <span class="text-blue-600">応募フォームへ</span>
                         </a>
@@ -103,6 +205,27 @@
             <p class="text-lg">
                 ご質問や不明点などありましたら、SNSの引用ポストまたはDM等でお問い合わせください。
             </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="mailto:contact-fuzzycontest@kazu0617.net" 
+                   class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="font-bold">メールでのお問い合わせ</span>
+                    </div>
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSduKhc-xar3R9R2PX1gRuvMxnl2e8748oDTUaJiIXx--2Gqog/viewform?usp=dialog" 
+                   target="_blank"
+                   class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span class="font-bold">お問い合わせフォーム</span>
+                    </div>
+                </a>
+            </div>
         </section>
     </main>
 

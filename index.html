@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ファジーちゃんプチフォトコンテスト</title>
+    <meta property="og:title" content="ファジーちゃんフォトコンテスト イベントページ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fuzzy-photo-contest.kazu0617.net" />
+    <meta property="og:image" content="https://fuzzy-photo-contest.kazu0617.net/assets/images/icon.png" />
+    <meta property="og:site_name" content="ファジーちゃんフォトコンテスト" />
+    <meta property="og:description" content="ファジーちゃん6周年併催フォトコンテストを開催します！6周年集会ワールドで使用する「ファジーちゃんのかわいい・かっこいい写真」を募集します！奮ってご参加ください！" />
+    <title>ファジーちゃんフォトコンテスト</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #fdf2f8 0%, #ede9fe 100%);
@@ -48,8 +54,8 @@
     <header class="py-8 px-4 text-center">
         <div class="max-w-4xl mx-auto">
             <img src="assets/images/icon.png" alt="ファジーちゃん" class="mx-auto rounded-full shadow-lg mb-6" width="200px" height="200px">
-            <h1 class="text-4xl font-bold mb-4 text-purple-800">ファジーちゃんプチフォトコンテスト</h1>
-            <p class="text-xl text-purple-600 mb-6">6周年記念企画</p>
+            <h1 class="text-4xl font-bold mb-4 text-purple-800">ファジーちゃんフォトコンテスト</h1>
+            <p class="text-xl text-purple-600 mb-6">6周年集会イベント企画</p>
             
             <!-- SNSシェアボタン -->
             <div class="flex justify-center space-x-4">
@@ -57,9 +63,7 @@
                 <a href="https://x.com/intent/post?text=ファジーちゃん周年記念フォトコン%0a&url=https://fuzzy-photo-contest.pages.dev&hashtags=ファジーちゃんフォトコン" 
                    target="_blank" 
                    class="share-button bg-gray-800 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-gray-700">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
+                    <i class="fa-brands fa-x-twitter"></i>
                     <span>シェア</span>
                 </a>
                 
@@ -73,13 +77,11 @@
                     <span>送る</span>
                 </a>
                 
-                <!-- Facebookでシェア -->
+                <!-- Blueskyでシェア -->
                 <a href="https://www.facebook.com/sharer/sharer.php?u=ファジーちゃん周年記念フォトコン&0ahttps://fuzzy-photo-contest.pages.dev%0a#ファジーちゃんフォトコン" 
                    target="_blank" 
-                   class="share-button bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-blue-500">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
-                    </svg>
+                   class="share-button bg-blue-500 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-blue-500">
+                    <i class="fa-brands fa-bluesky"></i>
                     <span>シェア</span>
                 </a>
 
@@ -95,22 +97,29 @@
                     <span>シェア</span>
                 </a>
 
-                <!-- Mixi2でシェア -->
-                <a href="https://example.com" 
-                   target="_blank" 
-                   class="share-button bg-mixi2 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-mixi2">
-                    <svg class="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 8C0 3.58172 3.58172 0 8 0H40C44.4183 0 48 3.58172 48 8V40C48 44.4183 44.4183 48 40 48H8C3.58172 48 0 44.4183 0 40V8Z" fill="white"/>
-                        <path d="M39.6362 17.6302C36.4764 5.90385 27.339 24.2027 23.6663 14.0177C21.1375 7.00689 10.7357 15.0557 8.21651 24.8217C6.77149 30.4212 9.58929 34.012 16.971 29.2362C22.845 25.4358 26.4624 26.4064 25.8338 33.1884C25.5544 36.2037 29.0418 38.5157 34.1596 35.2981C39.9541 31.6567 41.3679 24.0727 39.6338 17.6327L39.6362 17.6302Z" fill="url(#paint0_linear_7733_57805)"/>
-                        <defs>
-                            <linearGradient id="paint0_linear_7733_57805" x1="14.6252" y1="15.2098" x2="36.698" y2="33.3449" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#FF79A1"/>
-                                <stop offset="1" stop-color="#FF9A00"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>シェア</span>
-                </a>
+                <!-- その他の方法でシェア -->
+                <button onclick="sharePost()"
+                   class="share-button bg-white text-black px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-gray-200">
+                    <i class="fa-solid fa-share"></i>
+                    <span>共有</span>
+                    <script>
+                        function sharePost() {
+                            if (navigator.share) {
+                                navigator.share({
+                                    title: 'サイトの共有',
+                                    text: 'ファジーちゃんフォトコンテスト',
+                                    url: 'https://fuzzy-photo-contest.pages.dev/'
+                                }).then(() => {
+                                    console.log('Successful share');
+                                }).catch((error) => {
+                                    console.log('Error sharing', error);
+                                });
+                            } else {
+                                    alert('Web Share API is not supported in your browser.');
+                            }
+                        }
+                    </script>
+                </button>
             </div>
         </div>
     </header>
@@ -119,7 +128,7 @@
         <section class="contest-section rounded-lg shadow-lg p-8 mb-8">
             <h2 class="text-2xl font-bold mb-4 text-purple-700">📸 コンテスト概要</h2>
             <p class="text-lg mb-6">
-                6周年記念ワールドで使用する「ファジーちゃんのかわいい・かっこいい写真」を募集します！
+                6周年集会ワールドで使用する「ファジーちゃんのかわいい・かっこいい写真」を募集します！
                 奮ってご参加ください！
             </p>
 
@@ -169,6 +178,25 @@
                     <li>ファジーちゃんの対応衣装ギフトURL: <span class="font-bold">5名様程度</span></li>
                     <li>ファジーちゃんのギフトURL: <span class="font-bold">10名様程度</span></li>
                 </ul>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-6 mb-8">
+                <h3 class="text-xl font-bold mb-3 text-purple-700">❓ よくある質問</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-bold mb-2">Q: 応募は何枚まで可能ですか？</h4>
+                        <p>A: 何枚でも応募してもらって構いません。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-2">Q: サンプルアバターでの参加は問題ありませんか？</h4>
+                        <p>A: 問題ありません。この機会に是非ファジーちゃんを試用してみてください。</p>
+                        <p><a href="https://vrchat.com/home/avatar/avtr_5981bfab-b11d-4ebb-b18b-3a94d11abeef" class="text-blue-600 underline ml-2">サンプルアバターはこちら</a></p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-2">Q: 引用ポスト・投稿以外に応募条件になる投稿方法はありますか？</h4>
+                        <p>A: #ファジーちゃんフォトコンテスト のハッシュタグを付けてもらえれば可能な限り巡回します。</p>
+                    </div>
+                </div>
             </div>
 
             <div class="bg-purple-100 rounded-lg p-6">
@@ -250,7 +278,7 @@
         <section class="contest-section rounded-lg shadow-lg p-8">
             <h2 class="text-2xl font-bold mb-4 text-purple-700">❓ お問い合わせ</h2>
             <p class="text-lg">
-                ご質問や不明点などありましたら、SNSの引用ポストまたはDM等でお問い合わせください。
+                ご質問や不明点などありましたら、以下の窓口よりお問い合わせください。
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a href="mailto:contact-fuzzycontest@kazu0617.net" 
